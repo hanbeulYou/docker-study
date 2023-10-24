@@ -16,3 +16,5 @@ services:
       - 8080:80
     volumes:
       - ./:/usr/share/nginx/html/
+    environment:
+      - TEST=compose
