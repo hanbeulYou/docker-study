@@ -1,8 +1,18 @@
-version: '3'
+# version: '3'
+# services:
+#  nginx:
+#    image: nginx
+#    ports:
+#      - 60080:80
+#    volumes:
+#      - ./:/usr/share/nginx/html/
+
+version: "3"
 services:
   nginx:
-    image: nginx
+    build:
+      context: .
     ports:
-      - 60080:80
+      - 8080:80
     volumes:
       - ./:/usr/share/nginx/html/
