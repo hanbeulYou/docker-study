@@ -1,0 +1,19 @@
+version: "3"
+services:
+  gitlab:
+    image: gitlab/gitlab-ce
+    ports:
+      - 80:80
+    restart: always
+    hostname: "${IP_ADDR}"
+    environment:
+      - GITLAB_OMNIBUS_CONFIG=external_url "${IP_ADDR}"
+    volumes:
+      - gitlab_etc:/etc/gitlab
+      - gitlab_log:/var/log/gitlab
+      - gitlab_opt:/var/opt/gitlab
+
+volumes:
+  gitlab_etc: {}
+  gitlab_log: {}
+  gitlab_opt: {}
